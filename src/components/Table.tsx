@@ -25,7 +25,7 @@ import { composeTailwindRenderProps, focusRing } from './utils';
 
 export function Table(props: TableProps) {
   return (
-    <ResizableTableContainer className="overflow-auto relative">
+    <ResizableTableContainer className="overflow-auto relative bg-primary-50 dark:bg-primary-950/60">
       <AriaTable {...props} className="border-separate border-spacing-0" />
     </ResizableTableContainer>
   );
@@ -38,12 +38,12 @@ const columnStyles = tv({
 
 const resizerStyles = tv({
   extend: focusRing,
-  base: 'w-px px-[8px] translate-x-[8px] box-content py-1 h-5 bg-clip-content bg-gray-400 dark:bg-zinc-500 forced-colors:bg-[ButtonBorder] cursor-col-resize rounded resizing:bg-blue-600 forced-colors:resizing:bg-[Highlight] resizing:w-[2px] resizing:pl-[7px] -outline-offset-2'
+  base: 'w-px px-[8px] translate-x-[8px] box-content py-1 h-5 bg-clip-content bg-primary-400 dark:bg-primary-500 forced-colors:bg-[ButtonBorder] cursor-col-resize rounded resizing:bg-accent-600 forced-colors:resizing:bg-[Highlight] resizing:w-[2px] resizing:pl-[7px] -outline-offset-2'
 });
 
 export function Column(props: ColumnProps) {
   return (
-    <AriaColumn {...props} className={composeTailwindRenderProps(props.className, '[&:hover]:z-20 [&:focus-within]:z-20 text-start text-sm font-semibold text-gray-700 dark:text-zinc-300 cursor-default')}>
+    <AriaColumn {...props} className={composeTailwindRenderProps(props.className, '[&:hover]:z-20 [&:focus-within]:z-20 text-start text-sm font-semibold text-primary-700 dark:text-primary-300 cursor-default')}>
       {composeRenderProps(props.children, (children, { allowsSorting, sortDirection }) => (
         <div className="flex items-center">
           <Group
@@ -58,7 +58,7 @@ export function Column(props: ColumnProps) {
                   sortDirection === 'descending' ? 'rotate-180' : ''
                 }`}
               >
-                {sortDirection && <ArrowUp aria-hidden className="w-4 h-4 text-gray-500 dark:text-zinc-400 forced-colors:text-[ButtonText]" />}
+                {sortDirection && <ArrowUp aria-hidden className="w-4 h-4 text-primary-500 dark:text-primary-400 forced-colors:text-[ButtonText]" />}
               </span>
             )}
           </Group>
@@ -70,10 +70,10 @@ export function Column(props: ColumnProps) {
 }
 
 export function TableHeader<T extends object>(props: TableHeaderProps<T>) {
-  let { selectionBehavior, selectionMode, allowsDragging } = useTableOptions();
+  const { selectionBehavior, selectionMode, allowsDragging } = useTableOptions();
 
   return (
-    <AriaTableHeader {...props} className={composeTailwindRenderProps(props.className, 'sticky top-0 z-10 bg-gray-100/60 dark:bg-zinc-700/60 backdrop-blur-md supports-[-moz-appearance:none]:bg-gray-100 dark:supports-[-moz-appearance:none]:bg-zinc-700 forced-colors:bg-[Canvas] border-b dark:border-b-zinc-700')}>
+    <AriaTableHeader {...props} className={composeTailwindRenderProps(props.className, 'sticky top-0 z-10 bg-primary-100/60 dark:bg-primary-700/60 backdrop-blur-md supports-[-moz-appearance:none]:bg-primary-100 dark:supports-[-moz-appearance:none]:bg-primary-700 forced-colors:bg-[Canvas] border-b dark:border-b-primary-700')}>
       {/* Add extra columns for drag and drop and selection. */}
       {allowsDragging && <Column />}
       {selectionBehavior === 'toggle' && (
@@ -90,13 +90,13 @@ export function TableHeader<T extends object>(props: TableHeaderProps<T>) {
 
 const rowStyles = tv({
   extend: focusRing,
-  base: 'group/row relative cursor-default select-none -outline-offset-2 text-gray-900 disabled:text-gray-300 dark:text-zinc-200 dark:disabled:text-zinc-600 text-sm hover:bg-gray-100 dark:hover:bg-zinc-700/60 selected:bg-blue-100 selected:hover:bg-blue-200 dark:selected:bg-blue-700/30 dark:selected:hover:bg-blue-700/40'
+  base: 'group/row relative cursor-default select-none -outline-offset-2 text-primary-900 disabled:text-primary-300 dark:text-primary-200 dark:disabled:text-primary-600 text-sm hover:bg-primary-100 dark:hover:bg-primary-700/60 selected:bg-accent-100 selected:hover:bg-accent-200 dark:selected:bg-accent-700/30 dark:selected:hover:bg-accent-700/40'
 });
 
 export function Row<T extends object>(
   { id, columns, children, ...otherProps }: RowProps<T>
 ) {
-  let { selectionBehavior, allowsDragging } = useTableOptions();
+  const { selectionBehavior, allowsDragging } = useTableOptions();
 
   return (
     <AriaRow id={id} {...otherProps} className={rowStyles}>
@@ -119,7 +119,7 @@ export function Row<T extends object>(
 
 const cellStyles = tv({
   extend: focusRing,
-  base: 'border-b dark:border-b-zinc-700 group-last/row:border-b-0 [--selected-border:theme(colors.blue.200)] dark:[--selected-border:theme(colors.blue.900)] group-selected/row:border-[--selected-border] [:has(+[data-selected])_&]:border-[--selected-border] p-2 truncate -outline-offset-2'
+  base: 'border-b dark:border-b-primary-700 group-last/row:border-b-0 [--selected-border:theme(colors.accent.200)] dark:[--selected-border:theme(colors.accent.900)] group-selected/row:border-[--selected-border] [:has(+[data-selected])_&]:border-[--selected-border] p-2 truncate -outline-offset-2'
 });
 
 export function Cell(props: CellProps) {

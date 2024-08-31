@@ -14,7 +14,7 @@ export function GridList<T extends object>(
   { children, ...props }: GridListProps<T>
 ) {
   return (
-    <AriaGridList {...props} className={composeTailwindRenderProps(props.className, 'overflow-auto relative border dark:border-zinc-600')}>
+    <AriaGridList {...props} className={composeTailwindRenderProps(props.className, 'overflow-auto relative border dark:border-primary-600')}>
       {children}
     </AriaGridList>
   );
@@ -22,14 +22,14 @@ export function GridList<T extends object>(
 
 const itemStyles = tv({
   extend: focusRing,
-  base: 'relative flex gap-3 cursor-default select-none py-2 px-3 text-sm text-gray-900 dark:text-zinc-200 border-y dark:border-y-zinc-700 border-transparent first:border-t-0 last:border-b-0 first: last: -mb-px last:mb-0 -outline-offset-2',
+  base: 'relative flex gap-3 cursor-default select-none py-2 px-3 text-sm text-primary-900 dark:text-primary-200 border-y dark:border-y-primary-700 border-transparent first:border-t-0 last:border-b-0 first: last: -mb-px last:mb-0 -outline-offset-2',
   variants: {
     isSelected: {
-      false: 'hover:bg-gray-100 dark:hover:bg-zinc-700/60',
-      true: 'bg-blue-100 dark:bg-blue-700/30 hover:bg-blue-200 dark:hover:bg-blue-700/40 border-y-blue-200 dark:border-y-blue-900 z-20'
+      false: 'hover:bg-primary-100 dark:hover:bg-primary-700/60',
+      true: 'bg-accent-100 dark:bg-accent-700/30 hover:bg-accent-200 dark:hover:bg-accent-700/40 border-y-accent-200 dark:border-y-accent-900 z-20'
     },
     isDisabled: {
-      true: 'text-slate-300 dark:text-zinc-600 forced-colors:text-[GrayText] z-10'
+      true: 'text-slate-300 dark:text-primary-600 forced-colors:text-[primaryText] z-10'
     }
   }
 });

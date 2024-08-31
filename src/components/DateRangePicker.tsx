@@ -29,7 +29,7 @@ export function DateRangePicker<T extends DateValue>(
       {label && <Label>{label}</Label>}
       <FieldGroup className="min-w-[208px] w-auto">
         <DateInput slot="start" className="px-2 py-1.5 text-sm" />
-        <span aria-hidden="true" className="text-gray-800 dark:text-zinc-200 forced-colors:text-[ButtonText] group-disabled:text-gray-200 group-disabled:dark:text-zinc-600 group-disabled:forced-colors:text-[GrayText]">–</span>
+        <span aria-hidden="true" className="text-primary-800 dark:text-primary-200 forced-colors:text-[ButtonText] group-disabled:text-primary-200 group-disabled:dark:text-primary-600 group-disabled:forced-colors:text-[primaryText]">–</span>
         <DateInput slot="end" className="flex-1 px-2 py-1.5 text-sm" />
         <Button variant="icon" className="w-6 mr-1 rounded outline-offset-0">
           <CalendarIcon aria-hidden className="w-4 h-4" />

@@ -13,7 +13,7 @@ function App() {
   const [lightMode, setLightMode] = useState(true);
 
   return (
-    <div className="flex-auto flex flex-col items-stretch dark:bg-black text-primary-800 dark:text-primary-400">
+    <div className="flex-auto flex flex-col items-stretch">
       <Helmet>
         <html className={`${lightMode ? "" : "dark"} ${theme}`} />
       </Helmet>

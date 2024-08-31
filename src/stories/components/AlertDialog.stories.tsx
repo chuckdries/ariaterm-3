@@ -15,6 +15,7 @@ const meta: Meta<typeof AlertDialog> = {
 
 export default meta;
 
+// TODO theme classes in story?
 export const Example = (args: any) => (
   <DialogTrigger>
     <Button variant="secondary">Delete…</Button>

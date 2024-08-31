@@ -22,7 +22,7 @@ export function SearchField(
     <AriaSearchField {...props} className={composeTailwindRenderProps(props.className, 'group flex flex-col gap-1 min-w-[40px]')}>
       {label && <Label>{label}</Label>}
       <FieldGroup>
-        <SearchIcon aria-hidden className="w-4 h-4 ml-2 text-gray-500 dark:text-zinc-400 forced-colors:text-[ButtonText] group-disabled:text-gray-200 dark:group-disabled:text-zinc-600 forced-colors:group-disabled:text-[GrayText]" />
+        <SearchIcon aria-hidden className="w-4 h-4 ml-2 text-primary-500 dark:text-primary-400 forced-colors:text-[ButtonText] group-disabled:text-primary-200 dark:group-disabled:text-primary-600 forced-colors:group-disabled:text-[primaryText]" />
         <Input className="[&::-webkit-search-cancel-button]:hidden" />
         <Button variant="icon" className="mr-1 w-6 group-empty:invisible">
           <XIcon aria-hidden className="w-4 h-4" />

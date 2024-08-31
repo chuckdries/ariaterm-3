@@ -27,8 +27,8 @@ const checkboxStyles = tv({
   base: 'flex gap-2 items-center group text-sm',
   variants: {
     isDisabled: {
-      false: 'text-gray-800 dark:text-zinc-200',
-      true: 'text-gray-300 dark:text-zinc-600 forced-colors:text-[GrayText]'
+      false: 'text-primary-800 dark:text-primary-200',
+      true: 'text-primary-300 dark:text-primary-600 forced-colors:text-[primaryText]'
     }
   }
 });
@@ -38,19 +38,19 @@ const boxStyles = tv({
   base: 'w-5 h-5 flex-shrink-0 rounded flex items-center justify-center border-2',
   variants: {
     isSelected: {
-      false: 'bg-white dark:bg-zinc-900 border-[--color] [--color:theme(colors.gray.400)] dark:[--color:colors.zinc-400)] group-pressed:[--color:theme(colors.gray.500)] dark:group-pressed:[--color:theme(colors.zinc.300)]',
-      true: 'bg-[--color] border-[--color] [--color:theme(colors.gray.700)] group-pressed:[--color:theme(colors.gray.800)] dark:[--color:theme(colors.slate.300)] dark:group-pressed:[--color:theme(colors.slate.200)] forced-colors:![--color:Highlight]'
+      false: 'dark:bg-primary-900 border-[--color] [--color:theme(colors.primary.400)] dark:[--color:colors.primary-400)] group-pressed:[--color:theme(colors.primary.500)] dark:group-pressed:[--color:theme(colors.primary.300)]',
+      true: 'bg-[--color] border-[--color] [--color:theme(colors.primary.700)] group-pressed:[--color:theme(colors.primary.800)] dark:[--color:theme(colors.accent.500)] dark:group-pressed:[--color:theme(colors.accent.200)] forced-colors:![--color:Highlight]'
     },
     isInvalid: {
       true: '[--color:theme(colors.red.700)] dark:[--color:theme(colors.red.600)] forced-colors:![--color:Mark] group-pressed:[--color:theme(colors.red.800)] dark:group-pressed:[--color:theme(colors.red.700)]'
     },
     isDisabled: {
-      true: '[--color:theme(colors.gray.200)] dark:[--color:theme(colors.zinc.700)] forced-colors:![--color:GrayText]'
+      true: '[--color:theme(colors.primary.200)] dark:[--color:theme(colors.primary.700)] forced-colors:![--color:primaryText]'
     }
   }
 });
 
-const iconStyles = 'w-4 h-4 text-white group-disabled:text-gray-400 dark:text-slate-900 dark:group-disabled:text-slate-600 forced-colors:text-[HighlightText]';
+const iconStyles = 'w-4 h-4 text-accent-500 group-disabled:text-gray-400 dark:text-accent-900 dark:group-disabled:text-accent-600 forced-colors:text-[HighlightText]';
 
 export function Checkbox(props: CheckboxProps) {
   return (

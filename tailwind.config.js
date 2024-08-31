@@ -8,6 +8,7 @@ export default {
   theme: {
     fontFamily: {
       sans: [
+        "departure_monoregular",
         "Menlo",
         "Monaco",
         "Lucida Console",

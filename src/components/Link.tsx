@@ -9,11 +9,11 @@ interface LinkProps extends AriaLinkProps {
 
 const styles = tv({
   extend: focusRing,
-  base: 'underline disabled:no-underline disabled:cursor-default forced-colors:disabled:text-[GrayText] rounded',
+  base: 'underline disabled:no-underline disabled:cursor-default forced-colors:disabled:text-[primaryText] rounded',
   variants: {
     variant: {
-      primary: 'text-blue-600 dark:text-blue-500 underline decoration-blue-600/60 hover:decoration-blue-600 dark:decoration-blue-500/60 dark:hover:decoration-blue-500',
-      secondary: 'text-gray-700 dark:text-zinc-300 underline decoration-gray-700/50 hover:decoration-gray-700 dark:decoration-zinc-300/70 dark:hover:decoration-zinc-300'
+      primary: 'text-accent-600 dark:text-accent-500 underline decoration-accent-600/60 hover:decoration-accent-600 dark:decoration-accent-500/60 dark:hover:decoration-accent-500',
+      secondary: 'text-primary-700 dark:text-primary-300 underline decoration-primary-700/50 hover:decoration-primary-700 dark:decoration-primary-300/70 dark:hover:decoration-primary-300'
     }
   },
   defaultVariants: {

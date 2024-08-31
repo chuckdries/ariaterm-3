@@ -3,7 +3,7 @@ import { Separator as RACSeparator, SeparatorProps } from 'react-aria-components
 import { tv } from 'tailwind-variants';
 
 const styles = tv({
-  base: 'bg-gray-300 dark:bg-zinc-600 forced-colors:bg-[ButtonBorder]',
+  base: 'bg-primary-300 dark:bg-primary-600 forced-colors:bg-[ButtonBorder]',
   variants: {
     orientation: {
       horizontal: 'h-px w-full',

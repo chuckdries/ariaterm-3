@@ -2,10 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'departure_monoregular';
+  src: url('/departuremono-regular-webfont.woff2') format('woff2'),
+       url('/departuremono-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 #root {
   display: flex;
   flex-direction: column;
   height: 100vh;
   overflow: hidden;
+}
+
+.dark {
+  @apply bg-black text-primary-800 dark:text-primary-400;
 }
 

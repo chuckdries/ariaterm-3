@@ -20,7 +20,7 @@ export function ListBox<T extends object>(
   { children, ...props }: ListBoxProps<T>
 ) {
   return (
-    <AriaListBox {...props} className={composeTailwindRenderProps(props.className, 'outline-0 p-1 border border-gray-300 dark:border-zinc-600')}>
+    <AriaListBox {...props} className={composeTailwindRenderProps(props.className, 'outline-0 p-1 border border-primary-300 dark:border-primary-600')}>
       {children}
     </AriaListBox>
   );
@@ -31,11 +31,11 @@ export const itemStyles = tv({
   base: 'group relative flex items-center gap-8 cursor-default select-none py-1.5 px-2.5 will-change-transform text-sm forced-color-adjust-none',
   variants: {
     isSelected: {
-      false: 'text-slate-700 dark:text-zinc-300 hover:bg-slate-200 dark:hover:bg-zinc-700 -outline-offset-2',
-      true: 'bg-blue-600 text-white forced-colors:bg-[Highlight] forced-colors:text-[HighlightText] [&:has(+[data-selected])]: [&+[data-selected]]: -outline-offset-4 outline-white dark:outline-white forced-colors:outline-[HighlightText]'
+      false: 'text-slate-700 dark:text-primary-300 hover:bg-slate-200 dark:hover:bg-primary-700 -outline-offset-2',
+      true: 'bg-accent-600 text-white forced-colors:bg-[Highlight] forced-colors:text-[HighlightText] [&:has(+[data-selected])]: [&+[data-selected]]: -outline-offset-4 outline-white dark:outline-white forced-colors:outline-[HighlightText]'
     },
     isDisabled: {
-      true: 'text-slate-300 dark:text-zinc-600 forced-colors:text-[GrayText]'
+      true: 'text-slate-300 dark:text-primary-600 forced-colors:text-[primaryText]'
     }
   }
 });
@@ -56,18 +56,18 @@ export const dropdownItemStyles = tv({
   base: 'group flex items-center gap-4 cursor-default select-none py-2 pl-3 pr-1 outline outline-0 text-sm forced-color-adjust-none',
   variants: {
     isDisabled: {
-      false: 'text-gray-900 dark:text-zinc-100',
-      true: 'text-gray-300 dark:text-zinc-600 forced-colors:text-[GrayText]'
+      false: 'text-primary-900 dark:text-primary-100',
+      true: 'text-primary-300 dark:text-primary-600 forced-colors:text-[primaryText]'
     },
     isFocused: {
-      true: 'bg-blue-600 text-white forced-colors:bg-[Highlight] forced-colors:text-[HighlightText]'
+      true: 'bg-accent-600 text-white forced-colors:bg-[Highlight] forced-colors:text-[HighlightText]'
     }
   },
   compoundVariants: [
     {
       isFocused: false,
       isOpen: true,
-      className: 'bg-gray-100 dark:bg-zinc-700/60'
+      className: 'bg-primary-100 dark:bg-primary-700/60'
     }
   ]
 });
@@ -95,7 +95,7 @@ export interface DropdownSectionProps<T> extends SectionProps<T> {
 export function DropdownSection<T extends object>(props: DropdownSectionProps<T>) {
   return (
     <Section className="first:-mt-[5px] after:content-[''] after:block after:h-[5px]">
-      <Header className="text-sm font-semibold text-gray-500 dark:text-zinc-300 px-4 py-1 truncate sticky -top-[5px] -mt-px -mx-1 z-10 bg-gray-100/60 dark:bg-zinc-700/60 backdrop-blur-md supports-[-moz-appearance:none]:bg-gray-100 border-y dark:border-y-zinc-700 [&+*]:mt-1">{props.title}</Header>
+      <Header className="text-sm font-semibold text-primary-500 dark:text-primary-300 px-4 py-1 truncate sticky -top-[5px] -mt-px -mx-1 z-10 bg-primary-100/60 dark:bg-primary-700/60 backdrop-blur-md supports-[-moz-appearance:none]:bg-primary-100 border-y dark:border-y-primary-700 [&+*]:mt-1">{props.title}</Header>
       <Collection items={props.items}>
         {props.children}
       </Collection>

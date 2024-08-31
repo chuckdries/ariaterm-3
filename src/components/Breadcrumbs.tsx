@@ -13,7 +13,7 @@ export function Breadcrumb(props: BreadcrumbProps & Omit<LinkProps, 'className'>
   return (
     <AriaBreadcrumb {...props} className={composeTailwindRenderProps(props.className, 'flex items-center gap-1')}>
       <Link variant="secondary" {...props} />
-      {props.href && <ChevronRight className="w-3 h-3 text-gray-600 dark:text-zinc-400" />}
+      {props.href && <ChevronRight className="w-3 h-3 text-primary-600 dark:text-primary-400" />}
     </AriaBreadcrumb>
   );
 }
