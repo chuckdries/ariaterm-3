@@ -18,7 +18,7 @@ function App() {
         <html className={`${lightMode ? "" : "dark"} ${theme}`} />
       </Helmet>
 
-      <div className="flex gap-2 p-2">
+      <div className="flex gap-2 p-2 items-end">
         <h1 className="text-3xl font-bold underline">Hello world!</h1>
 
         <Select label="theme" selectedKey={theme} onSelectionChange={setTheme}>
